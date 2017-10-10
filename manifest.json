@@ -1,0 +1,49 @@
+{
+    "manifest_version": 2,
+    "version": "1.0.0",
+    "name": "Twitter Helper",
+    "description": "Twitter Helper for Chrome.",
+    "icons": {
+        "16": "ico/16.png",
+        "32": "ico/32.png",
+        "48": "ico/48.png",
+        "64": "ico/64.png",
+        "128": "ico/128.png"
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "ico/16.png",
+            "32": "ico/32.png",
+            "48": "ico/48.png",
+            "64": "ico/64.png",
+            "128": "ico/128.png"
+        }
+    },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ],
+        "persistent": false
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "declarativeContent",
+        "*://twitter.com/*"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "*://twitter.com/*"
+        ],
+        "css": [
+            "css/_main.css"
+        ],
+        "js": [
+            "js/jquery.min.js",
+            "js/download.min.js",
+            "js/downloadpromise.js",
+            "js/URI.min.js",
+            "js/_main.js"
+        ]
+    }]
+}
